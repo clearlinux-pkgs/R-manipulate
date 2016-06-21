@@ -4,7 +4,7 @@
 #
 Name     : R-manipulate
 Version  : 1.0.1
-Release  : 22
+Release  : 23
 URL      : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Summary  : Interactive Plots for RStudio
