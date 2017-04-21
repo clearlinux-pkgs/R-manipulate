@@ -4,7 +4,7 @@
 #
 Name     : R-manipulate
 Version  : 1.0.1
-Release  : 30
+Release  : 31
 URL      : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Summary  : Interactive Plots for RStudio
@@ -23,11 +23,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492800617
+export SOURCE_DATE_EPOCH=1492805950
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1492800617
+export SOURCE_DATE_EPOCH=1492805950
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
