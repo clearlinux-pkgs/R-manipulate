@@ -4,7 +4,7 @@
 #
 Name     : R-manipulate
 Version  : 1.0.1
-Release  : 29
+Release  : 30
 URL      : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Summary  : Interactive Plots for RStudio
@@ -19,12 +19,15 @@ No detailed description available
 %setup -q -c -n manipulate
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1484542523
+export SOURCE_DATE_EPOCH=1492800617
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1484542523
+export SOURCE_DATE_EPOCH=1492800617
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -40,7 +43,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library manipulate
 
@@ -50,6 +53,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/manipulate/DESCRIPTION
 /usr/lib64/R/library/manipulate/INDEX
 /usr/lib64/R/library/manipulate/Meta/Rd.rds
+/usr/lib64/R/library/manipulate/Meta/features.rds
 /usr/lib64/R/library/manipulate/Meta/hsearch.rds
 /usr/lib64/R/library/manipulate/Meta/links.rds
 /usr/lib64/R/library/manipulate/Meta/nsInfo.rds
