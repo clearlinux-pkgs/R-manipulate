@@ -4,13 +4,13 @@
 #
 Name     : R-manipulate
 Version  : 1.0.1
-Release  : 55
+Release  : 56
 URL      : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Summary  : Interactive Plots for RStudio
 Group    : Development/Tools
 License  : GPL-2.0
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 The manipulate function accepts a plotting expression and a set of
@@ -27,11 +27,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523315026
+export SOURCE_DATE_EPOCH=1552769082
 
 %install
+export SOURCE_DATE_EPOCH=1552769082
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523315026
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library manipulate|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  manipulate || :
 
 
 %files
