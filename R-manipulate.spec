@@ -4,14 +4,13 @@
 #
 Name     : R-manipulate
 Version  : 1.0.1
-Release  : 66
+Release  : 67
 URL      : https://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/manipulate_1.0.1.tar.gz
 Summary  : Interactive Plots for RStudio
 Group    : Development/Tools
 License  : GPL-2.0
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 The manipulate function accepts a plotting expression and a set of
@@ -22,21 +21,22 @@ The manipulate function accepts a plotting expression and a set of
 
 %prep
 %setup -q -c -n manipulate
+cd %{_builddir}/manipulate
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571859544
+export SOURCE_DATE_EPOCH=1589535687
 
 %install
-export SOURCE_DATE_EPOCH=1571859544
+export SOURCE_DATE_EPOCH=1589535687
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
